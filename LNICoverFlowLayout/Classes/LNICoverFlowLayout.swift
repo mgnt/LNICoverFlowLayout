@@ -25,7 +25,7 @@
 import UIKit
 
 /**
-    Collection Flow Layout in Swift 3.
+    Collection Flow Layout in Swift 4.2.
 
     Adds cover flow effect to collection view scrolling.
 
@@ -188,7 +188,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
 
         let center = itemCenterForRow(row + 1).x
         let nextItemLeftEdge = center - halfWidth
-        let projectedRightEdgeLocal = fabs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
+        let projectedRightEdgeLocal = abs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
 
         return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal
     }
